@@ -1,29 +1,33 @@
 //import React from 'react'
 import { FeatureGrid } from '../components/home/FeatureGrid'
 import { ProductGrid } from '../components/home/ProductGrid'
-import { popularCelulares, recentCelulares} from '../data/initialData'
+import { ProductGridSkeleton } from '../components/skeletons/productGridSkeleton'
 import { prepareProductsForGrid } from '../helpers'
+import { useHomeProducts } from '../hooks'
 
 export const HomePage = () => {
-  const preparedRecentProducts = prepareProductsForGrid(recentCelulares);
-  const preparedPopularProducts = prepareProductsForGrid(popularCelulares);
+  const{recentProducts, popularProducts, isLoading} =  useHomeProducts();
+
+
+  const preparedRecentProducts = prepareProductsForGrid(recentProducts);
+  const preparedPopularProducts = prepareProductsForGrid(popularProducts);
 
   return (
       <div>
       <FeatureGrid/>
 
-      <ProductGrid
-        title='Lo Nuevo'
-        //products={[{id: 1, title: 'Producto 1'}]}
-        /* ruta: src/data/initialData.ts (el archivo extension ts sera sustituido por la base de datos que se genere del catalogo de printopia) */
-        products={preparedRecentProducts}
-      />
+      {
+        isLoading ? (
+          <ProductGridSkeleton numberOfItems = {4} />
+        ) : ( <ProductGrid title='Nuevos Productos' products={preparedRecentProducts} />
+        )}
 
-      <ProductGrid
-      title='Mas Vendidos'
-      //products={[{id: 1, title: 'Producto mas vendido 1'}]}
-      products={preparedPopularProducts}
-      />
+      {
+        isLoading ? (
+          <ProductGridSkeleton numberOfItems = {4} />
+        ) : ( <ProductGrid title='Más vendidos' products={preparedPopularProducts} />
+        )}
+
     </div>
   )
 }
