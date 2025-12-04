@@ -1,9 +1,17 @@
-import React from 'react'
+//import React from 'react'
 import { Link } from 'react-router-dom'
 
-export const Logo = () => {
+interface Props {
+    isDashboard?: boolean;
+}
+
+export const Logo = ({ isDashboard }: Props) => {
     return (
-        <Link to='/' className={`text-2x1 font-bold tracking-tighter transition-all`}>
+        <Link
+            to='/'
+            className={`text-2xl font-bold tracking-tighter transition-all ${isDashboard && 'hover:scale-105'
+                }`}
+        >
             {/* LogoName */}
             <p className='hidden lg:block'>
                 Printopia
