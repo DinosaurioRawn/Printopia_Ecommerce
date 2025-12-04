@@ -1,8 +1,9 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import { RootLayout } from "../layouts/RootLayout";
-import { AboutPage, HomePage, LoginPage, RegisterPage, StorePage, StoresPage, } from "../pages";
+import { AboutPage, CheckoutPage, HomePage, LoginPage, OrderUserPage, RegisterPage, StorePage, StoresPage, } from "../pages";
 import { ClientLayout } from "../layouts/ClientLayout";
-import { OrdersUserPage } from "../pages/OrderUserPage";
+import { OrdersUserPage } from "../pages/OrdersUserPage";
+import { ThankyouPage } from "../pages/ThankyouPage";
 
 export const router = createBrowserRouter([
     {
@@ -45,8 +46,20 @@ export const router = createBrowserRouter([
                         path: 'pedidos',
                         element: <OrdersUserPage />,
                     },
+                    {
+                        path: 'pedidos/:id',
+                        element: <OrderUserPage />,
+                    },
                 ],
             },
         ]
+    },
+    {
+        path: '/checkout',
+        element: <CheckoutPage />,
+    },
+    {
+        path: '/checkout/:id/thank-you',
+        element: <ThankyouPage />,
     },
 ]);
