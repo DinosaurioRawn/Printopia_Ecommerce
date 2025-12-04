@@ -2,3 +2,8 @@
 export * from './products/useProducts';
 export * from './products/useFilteredProducts';
 export * from './products/useHomeProducts';
+
+/* Autenticación */
+export * from './auth/useUser';
+export * from './auth/useRegister';
+export * from './auth/useLogin';
