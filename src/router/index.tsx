@@ -6,6 +6,7 @@ import { OrdersUserPage } from "../pages/OrdersUserPage";
 import { ThankyouPage } from "../pages/ThankyouPage";
 import { DashboardLayout } from "../layouts/DashboardLayout";
 import { DashboardProductsPage } from "../pages/dashboard/DashboardProductsPage";
+import { DashboardNewProductPage } from "../pages/dashboard/DashboardNewProductPage";
 
 export const router = createBrowserRouter([
     {
@@ -75,6 +76,10 @@ export const router = createBrowserRouter([
             {
                 path: 'productos',
                 element: <DashboardProductsPage />,
+            },
+            {
+                path: 'productos/new',
+                element: <DashboardNewProductPage />,
             },
         ],
     },
