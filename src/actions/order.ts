@@ -233,7 +233,6 @@ export const getOrderById = async (orderId: number) => {
 
 /* Administrador */
 // Aquí van las funciones para que el administrador gestione las órdenes
-
 export const getAllOrders = async () => {
 	const { data, error } = await supabase
 		.from('orders')
