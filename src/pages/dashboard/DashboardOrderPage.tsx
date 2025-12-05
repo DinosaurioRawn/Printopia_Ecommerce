@@ -83,7 +83,7 @@ export const DashboardOrderPage = () => {
                         <p>{formatPriceToMXN(order.totalAmount)}</p>
                     </div>
                     <div className='flex justify-between'>
-                        <p>Envío (Standard)</p>
+                        <p>Envío (local)</p>
                         <p>{formatPriceToMXN(0)}</p>
                     </div>
                     <div className='flex justify-between text-black font-semibold'>

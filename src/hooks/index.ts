@@ -12,6 +12,7 @@ export * from './auth/useUser';
 export * from './auth/useRegister';
 export * from './auth/useLogin';
 export * from './auth/useCostumer';
+export * from './auth/useRoleUser';
 
 /* Órdenes */
 export * from './orders/useCreateOrder';
