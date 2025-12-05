@@ -2,6 +2,10 @@
 export * from './products/useProducts';
 export * from './products/useFilteredProducts';
 export * from './products/useHomeProducts';
+export * from './products/useProduct';
+export * from './products/useCreateProduct';
+export * from './products/useUpdateProduct';
+export * from './products/useDeleteProduct';
 
 /* Autenticación */
 export * from './auth/useUser';
@@ -13,3 +17,6 @@ export * from './auth/useCostumer';
 export * from './orders/useCreateOrder';
 export * from './orders/useOrder';
 export * from './orders/useOrders';
+export * from './orders/useAllOrders';
+export * from './orders/useChangeStatusOrder';
+export * from './orders/useOrderAdmin';

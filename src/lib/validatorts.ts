@@ -77,14 +77,14 @@ export const productSchema = z.object({
 		})
 	),
 	description: z.custom<JSONContent>(
-		value => !isContentEmpty(value),
+		value => !isContentEmpty(value as JSONContent),
 		{ message: 'La descripción no puede estar vacía' }
 	),
 	variants: z
 		.array(
 			z.object({
 				id: z.string().optional(),
-				stock: z.number().min(1, 'El stock debe ser mayor a 0'),
+				stock: z.number().min(0, 'El stock debe ser mayor o igual a 0'),
 				price: z.number().min(0.01, 'El precio debe ser mayor a 0'),
 				storage: z.string().min(1, 'El almacenamiento es requerido'),
 				color: z
